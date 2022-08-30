@@ -1,0 +1,51 @@
+<div class="col-md-5 offset-md-3"> 
+    <div class="card">  
+        <div class="card-body">
+            <h2>{{edit == false ? 'Add Product' : 'Update Product'}}</h2>
+            <form >
+              <div class="form-group"> 
+                <label class="form-control">Nombre:
+                <input type="text" name="Nombre" placeholder="Nombre producto" [(ngModel)]="inventario.Nombre" id="Nombre"  class="form-control" autofocus/>    
+            </label>
+              </div>
+              <div class="form-group">        
+                <label class="form-control">Cantidad:
+                <input type="text" placeholder="Cantidad" name="Cantidad" [(ngModel)]="inventario.Cantidad" id="Cantidad" class="form-control" />    
+            </label>
+              </div>
+              <div class="form-group"> 
+                <label class="form-control">Estado:
+                <input type="text" name="Estado" [(ngModel)]="inventario.Estado" id="Estado" placeholder="Estado" class="form-control" />    
+            </label>
+              </div>
+              <div class="form-group"> 
+                <label class="form-control">Precio:
+                <input type="text" name="Precio" [(ngModel)]="inventario.Precio" id="Precio" placeholder="Precio" class="form-control" />    
+            </label>
+              </div>
+              <div class="form-group"> 
+                <label class="form-control">Lote:
+                <input type="text" name="Lote" [(ngModel)]="inventario.Lote" id="Lote" placeholder="Lote" class="form-control" />    
+            </label>
+              </div>
+              <div class="form-group"> 
+                <label class="form-control">Proveedor:
+                <input type="text" name="proveedor" [(ngModel)]="inventario.proveedor" id="Nombre proveedor " placeholder="proveedor" class="form-control" />    
+            </label>
+              </div>
+              <button class="{{edit == false ? 'btn btn-success btn-block' : 'btn btn-danger btn-block'}}" (click)="edit == false ? saveNewProduct() : editProduct()">
+                  SAVE
+              </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h1>{{inventario.Nombre == "" ? "-":inventario.Nombre}}</h1>
+        <h3>Precio: {{inventario.Precio}}</h3>
+        <p>Cantidad: {{inventario.Cantidad}} Lote: {{inventario.Lote}} </p>
+        <p>{{inventario.proveedor}}</p>
+    </div>
+</div>

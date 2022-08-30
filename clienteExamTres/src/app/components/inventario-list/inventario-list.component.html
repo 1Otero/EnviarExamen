@@ -1,0 +1,27 @@
+<div class="col-md-4" *ngFor="let inv of inventario">
+ <div class="card">
+     <div class="card-header d-flex justify-content-between bg-light">
+      <h1>{{inv.IdProducto}}</h1>
+      <button routerLink="/" class="btn btn-danger" (click)="deleteProducto(inv.IdProducto)">
+         <i href="" class="far fa-trash-alt"></i> 
+      </button>
+     </div>
+     <div class="card-body">
+      <div>
+        <h2>{{inv.Nombre}}</h2>
+        <h5>Cantidad:</h5>
+        {{inv.Cantidad}} 
+        <h5>Precio:</h5>
+        {{inv.Precio}} 
+      </div>
+      <a [routerLink]="['/inventario/edit', inv.IdProducto]" class="btn btn-info btn-block" >
+          EDIT PRODUCT
+      </a>
+          <div class="" style="margin-left:18px; display: inline-block; position: absolute;">
+            <h3 style="display: inline-block;">Total:</h3>
+            <h4 style="float:right">{{inv.Cantidad*inv.Precio}}</h4>
+          </div>
+     </div>
+ </div>
+</div>
+
